@@ -16,5 +16,4 @@ class Test(unittest.TestCase):
         self.form.__raw__ = {'image': 'pythons.jpeg'}
         self.assertEqual(self.form['image'].width, 200)
         self.assertEqual(self.form['image'].height, 128)
-        
-        
+        self.assertEqual(self.form['image'].filename, 'pythons.jpeg')
