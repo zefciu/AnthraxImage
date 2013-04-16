@@ -6,7 +6,7 @@ with open('README.rst') as f:
 
 setup(
     name = 'AnthraxImage',
-    version = '0.0.1',
+    version = '0.0.2',
     author = 'Szymon Pyżalski',
     author_email = 'zefciu <szymon@pythonista.net>',
     description = 'Anthrax - tools for HTML input',

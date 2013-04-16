@@ -13,8 +13,8 @@ class ImageField(FileField):
     accept_mime = {'image/*'}
     scale_down = None
 
-    def to_python(self, value):
-        value = super(ImageField, self).to_python(value)
+    def to_python(self, value, bf):
+        value = super(ImageField, self).to_python(value, bf)
         try:
             img = pystacia.read_blob(value.file.read())
         except TinyException:
@@ -27,6 +27,6 @@ class ImageField(FileField):
                 img.rescale(factor=factor)
         return img
 
-    def _declarative_python_validation(self, value):
+    def _declarative_python_validation(self, value, bf):
         """We suppress the baseclass validation, cause we no longer deal with
         file object."""
